@@ -1,0 +1,191 @@
+/* styles.css */
+
+/* Загальні стилі для BODY */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: #FFFFFF;
+    line-height: 1.5;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background: url("images/web_bg.jpg") no-repeat center center fixed; 
+    background-size: cover;
+}
+
+/* Стилі для заголовків (H1-H6) */
+h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Заголовки з ідентифікаторами */
+h3, #our-advantages, #why-us {
+    color: #FFCC66;
+    font-size: 28px;
+}
+
+/* Унікальний ідентифікатор для заголовка плаваючого фрейма */
+#frame {
+    color: #FFCC66;
+    font-size: 28px;
+}
+
+/* Стилі для абзаців */
+p {
+    margin: 10px 0;
+    padding: 5px;
+    text-align: justify;
+    color: white !important;
+}
+
+
+/* Стилі для посилань */
+a:link {
+    text-decoration: none;
+    color: #483d8b;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+a:visited {
+    color: #cc6600;
+}
+
+a:active {
+    color: red;
+    background-color: #483d8b;
+}
+
+a:hover {
+    color: #c500cc;
+}
+
+.nav-link {
+    font-size: 24px;
+    padding: 10px;
+    text-decoration: none;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    text-align: center;
+    flex: 1;
+}
+
+
+/* Стилі контейнерів */
+div.main-links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+}
+
+div.links-by-id {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+div.links-by-id a {
+    font-size: 24px;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    font-style: italic;
+}
+
+div.links-for-pictures {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+    justify-content: center;
+}
+
+div.frame {
+    margin: 40px 0;
+    text-align: center;
+}
+
+/* Стилі для списків */
+/* Загальні налаштування для маркованих та нумерованих списків */
+ul, ol {
+    margin: 20px auto;
+    padding: 10px 50px;
+    background-color: #444444;
+    border: 2px solid #72b9ff;
+    border-radius: 5px;
+    font-size: 20px;
+    display: inline-block;
+    text-align: left;
+}
+
+ul li {
+    list-style-type: square;
+    margin-bottom: 10px;
+}
+
+ol li {
+    list-style-type: upper-roman;
+    margin-bottom: 10px;
+}
+
+
+/* Стилізація списків визначень */
+dl {
+    margin: 20px;
+    padding: 10px;
+    background-color: #555555;
+    border: 3px dashed #FFCC66;
+    border-radius: 5px;
+}
+
+dt {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #FFCC66;
+    font-size: 28px;
+}
+
+dd {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+
+/* Стилі для таблиць */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 18px;
+    margin: 20px 0;
+    color: #000000;
+}
+
+table, th, td {
+    border: 2px solid #e2ccff;
+}
+
+.prices-table caption {
+    font-size: 24px;
+    color: #FFFFFF;
+    font-weight: bold;
+    caption-side: top;
+    margin-bottom: 10px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #72b9ff;
+    color: #ffffff;
+}

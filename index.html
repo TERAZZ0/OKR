@@ -5,22 +5,29 @@
   <meta charset="UTF-8">
   <meta name="author" content="Драга Тарас">
   <title>Хімчистка "Чистота" - Головна</title>
+  <!-- Підключення зовнішнього CSS файлу -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    p {
+      font-size: 22px;
+      color: #FFFF00 !important;
+    }
+  </style>
 </head>
-<body background="images/web_bg.jpg" link="#483d8b" vlink="#cc6600" alink="red">
+<body>
   <!-- Навігаційне меню -->
   <br><br>
-  <div style="display: flex; justify-content: space-between; width: 100%; gap: 10px;">
-    <a href="index.html" style="font-size: 24px; padding: 10px; text-decoration: none; flex: 1; text-align: center; background-color: #f0f0f0; border-radius: 5px;">Головна</a>
-    <a href="services.html" style="font-size: 24px; padding: 10px; text-decoration: none; flex: 1; text-align: center; background-color: #f0f0f0; border-radius: 5px;">Послуги</a>
-    <a href="prices.html" style="font-size: 24px; padding: 10px; text-decoration: none; flex: 1; text-align: center; background-color: #f0f0f0; border-radius: 5px;">Ціни</a>
-    <a href="contacts.html" style="font-size: 24px; padding: 10px; text-decoration: none; flex: 1; text-align: center; background-color: #f0f0f0; border-radius: 5px;">Контакти</a>
-    <a href="https://www.ss.com" target="_blank" style="font-size: 24px; padding: 10px; text-decoration: none; flex: 1; text-align: center; background-color: #f0f0f0; border-radius: 5px;">Приклад неактивованої</a>
+  <div class="main-links">
+    <a href="index.html" class="nav-link">Головна</a>
+    <a href="services.html" class="nav-link">Послуги</a>
+    <a href="prices.html" class="nav-link">Ціни</a>
+    <a href="contacts.html" class="nav-link">Контакти</a>
   </div>
   
   <br><br><br>
   
   <!-- Параграфи з текстом -->
-  <div style="font-family: Arial; font-size: 24px; color: #FFFFFF; text-align: left; line-height: 1.5;">
+  <div>
 
     <p>
       Ласкаво просимо до хімчистки "Чистота"! Ми надаємо високоякісні послуги з догляду за вашим одягом. Наш досвідчений персонал забезпечує професійне очищення навіть найделікатніших тканин.
@@ -43,18 +50,18 @@
   <br><br>
 
   <!-- Гіперпосилання для переходу до конкретного рядка -->
-  <div style="display: flex; flex-direction: column; align-items: center; gap: 15px; margin: 30px 0;">
+  <div class="links-by-id">
 
-    <a href="#our-advantages" style="font-size: 24px; padding: 10px 20px; text-decoration: none; background-color: #f0f0f0; border-radius: 5px;">
-      <i>Наші переваги</i>
+    <a href="#our-advantages">
+      Наші переваги
     </a>
   
-    <a href="#why-us" style="font-size: 24px; padding: 10px 20px; text-decoration: none; background-color: #f0f0f0; border-radius: 5px;">
-      <i>Чому необхідно обрати саме нас</i>
+    <a href="#why-us">
+      Чому необхідно обрати саме нас
     </a>
   
-    <a href="services.html#services-list" style="font-size: 24px; padding: 10px 20px; text-decoration: none; background-color: #f0f0f0; border-radius: 5px;">
-      <i>Детальніше про послуги</i>
+    <a href="services.html#services-list">
+      Детальніше про послуги
     </a>
 
   </div>
@@ -62,7 +69,7 @@
   <br><br>
 
   <!-- Зображення з гіперпосиланням (зменшене зображення, що веде до повнорозмірного) -->
-  <div style="display: flex; flex-wrap: wrap; gap: 100px; justify-content: center;">
+  <div class="links-for-pictures">
 
     <a href="images/dry_cleaner.jpg" target="_blank">
       <img src="images/dry_cleaner.jpg" width="400" height="250" alt="Хімчистка">
@@ -85,36 +92,32 @@
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   
   <!-- Списки -->
-  <h3 id="our-advantages" style="color: #FFCC66; font-family: Arial; font-size: 28px; text-align:left; margin-top: 30px;">Наші переваги:</h3>
-  <ul type="square">
-    <font face="Arial" size="5" color="#FFFFFF" style="text-align:left;">
-      <li>Професійне обладнання</li><br>
-      <li>Досвідчений персонал</li><br>
-      <li>Швидке обслуговування</li><br>
-      <li>Екологічно чисті засоби</li><br>
-      <li>Гарантія безпечного очищення</li><br>
-      <li>Доступні ціни та знижки для постійних клієнтів</li>
-    </font>
+  <h3 id="our-advantages">Наші переваги:</h3>
+  <ul>
+    <li>Професійне обладнання</li><br>
+    <li>Досвідчений персонал</li><br>
+    <li>Швидке обслуговування</li><br>
+    <li>Екологічно чисті засоби</li><br>
+    <li>Гарантія безпечного очищення</li><br>
+    <li>Доступні ціни та знижки для постійних клієнтів</li>
   </ul>
   <br><br>
-  <h3 id="why-us" style="color: #FFCC66; font-family: Arial; font-size: 28px; text-align:left; margin-top: 30px;">Чому необхідно обрати саме нас</h3>
-  <ol type="I">
-    <font face="Arial" size="5" color="#FFFFFF" style="text-align:left;">
-      <li>Багаторічний досвід у сфері хімчистки</li><br>
-      <li>Індивідуальний підхід до кожного клієнта</li><br>
-      <li>Використання лише сертифікованих засобів</li><br>
-      <li>Швидке виконання замовлень без втрати якості</li><br>
-      <li>Зручне розташування та можливість доставки</li><br>
-      <li>Позитивні відгуки та постійна база клієнтів</li>
-    </font>
+  <h3 id="why-us">Чому необхідно обрати саме нас</h3>
+  <ol>
+    <li>Багаторічний досвід у сфері хімчистки</li><br>
+    <li>Індивідуальний підхід до кожного клієнта</li><br>
+    <li>Використання лише сертифікованих засобів</li><br>
+    <li>Швидке виконання замовлень без втрати якості</li><br>
+    <li>Зручне розташування та можливість доставки</li><br>
+    <li>Позитивні відгуки та постійна база клієнтів</li>
   </ol>
   
   <br><br><br><br><br><br><br><br><br><br>
 
   <!-- Плаваючий фрейм -->
-  <div style="margin: 40px 0; text-align: center;">
+  <div class="frame">
 
-    <h3 style="color: #FFCC66; font-family: Arial; font-size: 28px; margin-bottom: 20px;">
+    <h3 id="frame">
       Наша геолокація:
     </h3>
   
