@@ -189,3 +189,14 @@ th {
     background-color: #72b9ff;
     color: #ffffff;
 }
+
+/* Приклади сусідніх та дочірніх селекторів */
+
+.links-for-pictures > a > img {
+    border: 2px dashed #cc6600;
+    border-radius: 4px;
+}
+
+b + i {
+    color: #000000;
+}
