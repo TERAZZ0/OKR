@@ -191,7 +191,6 @@ th {
 }
 
 /* Приклади сусідніх та дочірніх селекторів */
-
 .links-for-pictures > a > img {
     border: 2px dashed #cc6600;
     border-radius: 4px;
@@ -199,4 +198,48 @@ th {
 
 b + i {
     color: #000000;
+}
+
+
+/* Псевдоелементи */
+dl dt:before { content: "✦ "; }
+dl dt:after  { content: " ✦"; }
+
+ul li:first-child {
+    font-size: 22px;
+    color: #FFCC66;
+}
+
+
+/* Плаваючі блоки */
+.links-for-pictures img {
+    float: left;
+    margin: 0 20px 20px 0;
+    width: 300px;
+}
+
+
+/* Позиціонування */
+#contact-info {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.6);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.frame { position: relative; }
+.frame::before {
+  content: "📍";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+}
+
+.nav-icon {
+    margin-right: 8px;
 }
