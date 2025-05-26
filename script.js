@@ -139,6 +139,11 @@ function fullDomManipulation() {
 }
 
 
+// Функція з алертом
+function showDiscount() {
+    alert("Сьогодні діє знижка 15% на чищення костюмів!");
+}
+
 // Виклик функцій
 window.addEventListener("DOMContentLoaded", () => {
     // 1. Замовлення чистки
@@ -198,4 +203,75 @@ window.addEventListener("DOMContentLoaded", () => {
     updateBtn.className = "nav-link";
     updateBtn.onclick = fullDomManipulation;
     document.body.append(updateBtn);
-  });
+
+    // Призначення обробника події через властивість element.onclick
+    const btnProp = document.getElementById("btn-prop");
+    if (btnProp) {
+        btnProp.onclick = function () {
+        alert("У нас працюють сертифіковані майстри з 10-річним досвідом.");
+        };
+    }
+
+    // Призначення двох обробників до однієї події через addEventListener
+    const btnDouble = document.getElementById("btn-double");
+    if (btnDouble) {
+        btnDouble.addEventListener("click", () => alert("Ми гарантуємо якість кожного замовлення."));
+        btnDouble.addEventListener("click", () => console.log("Клік по кнопці Гарантія якості"));
+    }
+
+    // Призначення обробника події як об'єкта з методом handleEvent + removeEventListener
+    const btnTrack = document.getElementById("btn-track");
+    if (btnTrack) {
+        const tracker = {
+            handleEvent(event) {
+                alert("Ваше замовлення в обробці. Перевірте статус пізніше.");
+                console.log("Натиснуто на:", event.currentTarget);
+                
+                btnTrack.removeEventListener("click", tracker);
+                console.log("Обробник знято на 10 сек");
+
+                setTimeout(() => {
+                    btnTrack.addEventListener("click", tracker);
+                    console.log("Обробник знову активовано");
+                }, 10000);
+            }
+        };
+
+        btnTrack.addEventListener("click", tracker);
+    }
+
+
+  // Підсвічування <ul>
+    const list = document.querySelector("ul");
+    if (list) {
+        list.addEventListener("click", (event) => {
+        if (event.target.tagName === "LI") {
+            list.querySelectorAll("li").forEach(li => li.classList.remove("highlight"));
+            event.target.classList.add("highlight");
+        }
+        });
+    }
+
+  // Меню з data-*
+    const serviceMenu = document.getElementById("service-menu");
+    if (serviceMenu) {
+        serviceMenu.addEventListener("click", (event) => {
+        const type = event.target.dataset.service;
+        if (!type) return;
+
+        switch (type) {
+            case "clean-costume":
+            alert("Чищення костюму триває 24 години. Ціна — від 150 грн.");
+            break;
+            case "clean-leather":
+            alert("Шкіряні речі чистяться вручну. Ціна — від 250 грн.");
+            break;
+            case "clean-curtains":
+            alert("Штори миємо з відновленням кольору. Ціна — від 100 грн.");
+            break;
+            default:
+            alert("Невідома послуга.");
+        }
+        });
+    }
+});

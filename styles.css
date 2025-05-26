@@ -262,3 +262,8 @@ ul li:first-child {
 .nav-icon {
     margin-right: 8px;
 }
+
+.highlight {
+  background-color: rgba(255, 255, 0, 0.3);
+  border-radius: 5px;
+}

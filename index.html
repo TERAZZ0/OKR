@@ -24,6 +24,21 @@
     <a href="contacts.html" class="nav-link"><span class="nav-icon">📞</span>Контакти</a>
   </div>
   
+  <!-- Блок кнопок для подій миші -->
+  <div style="margin: 30px; display: flex; flex-direction: column; gap: 10px;">
+    <button onclick="showDiscount()" class="nav-link">Отримати знижку</button>
+    <button id="btn-prop" class="nav-link">Про співробітників</button>
+    <button id="btn-double" class="nav-link">Гарантія якості</button>
+    <button id="btn-track" class="nav-link">Відстежити замовлення</button>
+  </div>
+
+  <!-- Блок меню з data-* -->
+  <div id="service-menu" style="margin: 30px; display: flex; gap: 15px; justify-content: center;">
+    <button data-service="clean-costume" class="nav-link">Костюми</button>
+    <button data-service="clean-leather" class="nav-link">Шкіра</button>
+    <button data-service="clean-curtains" class="nav-link">Штори</button>
+  </div>
+  
   <br><br><br>
   
   <!-- Параграфи з текстом -->
