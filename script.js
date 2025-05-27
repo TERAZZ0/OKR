@@ -275,3 +275,79 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+// Hover-ефект для всіх .nav-link кнопок
+document.querySelectorAll('.nav-link').forEach(el => {
+  el.addEventListener('mouseover', e => {
+    e.target.style.backgroundColor = '#ffe066';
+    e.target.style.color = '#000';
+  });
+  el.addEventListener('mouseout', e => {
+    e.target.style.backgroundColor = '';
+    e.target.style.color = '';
+  });
+});
+
+// Drag-n-drop
+let draggedItem = null;
+let shiftX = 0, shiftY = 0;
+const dropZone = document.getElementById('drop-zone');
+
+document.querySelectorAll('.draggable').forEach(item => {
+  item.addEventListener('mousedown', e => {
+    e.preventDefault();
+
+    draggedItem = item;
+
+    const rect = item.getBoundingClientRect();
+    shiftX = e.clientX - rect.left;
+    shiftY = e.clientY - rect.top;
+
+    document.body.appendChild(item);
+
+    item.style.position = 'absolute';
+    item.style.left = window.scrollX + rect.left + 'px';
+    item.style.top = window.scrollY + rect.top + 'px';
+    item.style.zIndex = 1000;
+    item.style.pointerEvents = 'none';
+
+    document.body.style.userSelect = 'none';
+  });
+
+  item.ondragstart = () => false;
+});
+
+document.addEventListener('mousemove', e => {
+  if (!draggedItem) return;
+
+  draggedItem.style.left = e.pageX - shiftX + 'px';
+  draggedItem.style.top = e.pageY - shiftY + 'px';
+});
+
+document.addEventListener('mouseup', e => {
+  if (!draggedItem) return;
+
+  const dz = dropZone.getBoundingClientRect();
+  const it = draggedItem.getBoundingClientRect();
+  const centerX = it.left + it.width / 2;
+  const centerY = it.top + it.height / 2;
+
+  const isInDropZone =
+    centerX >= dz.left &&
+    centerX <= dz.right &&
+    centerY >= dz.top &&
+    centerY <= dz.bottom;
+
+  if (isInDropZone) {
+    dropZone.style.backgroundColor = 'rgba(255,255,255,0.2)';
+    dropZone.textContent = 'Річ успішно здана до очищення!';
+  } else {
+    dropZone.style.backgroundColor = '';
+    dropZone.textContent = 'Перетягніть річ сюди';
+  }
+
+  draggedItem.style.zIndex = '';
+  draggedItem.style.pointerEvents = '';
+  document.body.style.userSelect = '';
+  draggedItem = null;
+});
